@@ -2128,7 +2128,7 @@ class Solicitud extends ConexionMySQL{
     if($datEst['cve_estatus'] == 2){
         $SQLasignado = "select aplica_estado_id from solicitud where id = ".$sol.";";
         $asignado = $this->query($SQLasignado,'registro');
-        if($asignado['aplica_estado_id'] == 32){
+        if($asignado['aplica_estado_id'] == 83){
             $as = ",asignado = 1";
         }else{
             $sqlPais = "SELECT pais_id FROM estado where id = ".$asignado['aplica_estado_id'].";";

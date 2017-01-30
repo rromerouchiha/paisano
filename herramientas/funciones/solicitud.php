@@ -17,7 +17,7 @@ if(empty($_SESSION['id'])){
 if($opcion == 1){//Agregar Solicitud
         $estatus = 0;
         $mensaje = "";
-        $estado = (!empty($_SESSION['edo_rep'])) ? $_SESSION['edo_rep'] : 32;
+        $estado = (!empty($_SESSION['edo_rep'])) ? $_SESSION['edo_rep'] : 83;
         $idusu = (!empty($_SESSION['id']))? $_SESSION['id']: 0 ;
         $rol = 1;
         while(md5($rol) != $_SESSION['rol_usuario_id']){  
