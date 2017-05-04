@@ -1200,7 +1200,7 @@ class Solicitud extends ConexionMySQL{
                     $("#id_solicitanteEd").val('.$solicitudP['solicitante'].');
                     $("#muestra_folio").show();
                     $("#tipo_registro").val('.$solicitudP['tipo_registro_operacion_id'].').change();
-                    $("#fecha_recepcion").prop("value","'.$solicitudP['recepcionf'].'").change();
+                    $("#fecha_recepcion").prop("value","'.$solicitudP['recepcionf'].'");
                     $("#medio_recepcion").val('.$solicitudP['medio_recepcion_id'].');
                     $("#estatus_peticion").val('.$solicitudP['cve_estatus'].');
                     $("#causa").val('.$solicitudP['causa'].').change();
