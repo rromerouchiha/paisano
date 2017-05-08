@@ -996,7 +996,7 @@ class Solicitud extends ConexionMySQL{
                 break;
                 case 2 ://oic
                     if($busqueda != null){
-                        $sqlSol = "select s.id,fo.numero_folio,DATE_FORMAT(he.fecha_actualizacion,'%d-%m-%Y') 'asignada',o.nombre_operacion,c.causa, edo.nombre_estado,DATE_FORMAT(s.fecha_registro,'%d-%m-%Y') 'registrada',ep.estatus_peticion
+                        $sqlSol = "select s.id,fo.numero_folio,DATE_FORMAT(he.fecha_actualizacion,'%d-%m-%Y') 'asignada',o.nombre_operacion,c.causa, edo.nombre_estado,DATE_FORMAT(s.fecha_recepcion,'%d-%m-%Y') 'registrada',ep.estatus_peticion
                                     from solicitud s inner join operacion o on s.tipo_registro_operacion_id = o.id
                                     inner join causa c on c.id = s.causa
                                     inner join historial_estatus he on s.id = he.solicitud_id and he.asignado = 4 and (he.asigno = 1 or he.asigno = 5) and he.activo = 1
@@ -1010,7 +1010,7 @@ class Solicitud extends ConexionMySQL{
                                     order by fo.numero_folio;";
                         $solicitudes = $this->query($sqlSol,'arregloAsociado');
                     }else{
-                        $sqlSol = "select s.id,fo.numero_folio,DATE_FORMAT(he.fecha_actualizacion,'%d-%m-%Y') 'asignada',o.nombre_operacion,c.causa, edo.nombre_estado,DATE_FORMAT(s.fecha_registro,'%d-%m-%Y') 'registrada',ep.estatus_peticion
+                        $sqlSol = "select s.id,fo.numero_folio,DATE_FORMAT(he.fecha_actualizacion,'%d-%m-%Y') 'asignada',o.nombre_operacion,c.causa, edo.nombre_estado,DATE_FORMAT(s.fecha_recepcion,'%d-%m-%Y') 'registrada',ep.estatus_peticion
                                     from solicitud s inner join operacion o on s.tipo_registro_operacion_id = o.id
                                     inner join causa c on c.id = s.causa
                                     inner join historial_estatus he on s.id = he.solicitud_id and he.asignado = 4 and (he.asigno = 1 or he.asigno = 5) and he.activo = 1
